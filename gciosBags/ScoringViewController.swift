@@ -8,7 +8,28 @@
 
 import UIKit
 
-class ScoringViewController: UIViewController {
+class ScoringViewController: UIViewController ,WeatherApiDelegate{
+   
+    
+    func didGetWeather(weather: Weather) {
+        DispatchQueue.global(qos: .background).async {
+            DispatchQueue.main.async {
+                if (weather.mainWeather == "Rain"){
+                    self.weatherBG.image = UIImage(named:"rainBG")
+                }else if (weather.mainWeather == "Cloudy"){
+                    self.weatherBG.image = UIImage(named:"cloudyBG")
+                }else {
+                    self.weatherBG.image = UIImage(named:"sunBG")
+                }
+                
+            }
+        }
+    }
+    
+    func didNotGetWeather(error: NSError) {
+        print("API Error")
+    }
+    
 
   private static let redColor = UIColor(red: 0.75, green: 0.16, blue: 0.16, alpha: 1.00)
   private static let blueColor = UIColor(red:0.20, green:0.50, blue:0.81, alpha:1.00)
@@ -19,7 +40,8 @@ class ScoringViewController: UIViewController {
   private var holePath = UIBezierPath()
   private var boardPath = UIBezierPath()
 
-  @IBOutlet weak var boardImageView: UIImageView!
+    @IBOutlet weak var weatherBG: UIImageView!
+    @IBOutlet weak var boardImageView: UIImageView!
   @IBOutlet weak var roundLabel: UILabel!
   @IBOutlet weak var playView: UIView!
 
@@ -32,6 +54,8 @@ class ScoringViewController: UIViewController {
   @IBOutlet weak var redBagCountContainerStackView: UIStackView!
   @IBOutlet weak var blueBagCountContainerStackView: UIStackView!
 
+  var weather: WeatherApi!
+    
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     NotificationCenter.default.addObserver(self, selector: #selector(regenerateAllThrowsInRound), name: .bagViewMoved, object: nil)
@@ -39,10 +63,15 @@ class ScoringViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    weather = WeatherApi(delegate: self)
     self.refreshViews()
     self.redBagCountContainerStackView.arrangedSubviews.forEach({ self.configureBagCountIndicator($0, color: ScoringViewController.redColor) })
     self.blueBagCountContainerStackView.arrangedSubviews.forEach({ self.configureBagCountIndicator($0, color: ScoringViewController.blueColor) })
     self.boardImageView.layer.zPosition = 2
+    
+    //
+    let weatherString = weather.getGPSWeather(lat: "40.714628", long: "-74.007315")
+    
   }
 
   override func viewDidLayoutSubviews() {

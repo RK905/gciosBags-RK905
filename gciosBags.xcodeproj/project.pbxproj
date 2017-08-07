@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7E0ED81F38F4F0007D4C83 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E0ED71F38F4F0007D4C83 /* WeatherApi.swift */; };
+		0A7E0EDA1F39056E007D4C83 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E0ED91F39056E007D4C83 /* Weather.swift */; };
 		A02060781E4BAAFA0042238D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02060771E4BAAFA0042238D /* AppDelegate.swift */; };
 		A020607A1E4BAAFA0042238D /* ScoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02060791E4BAAFA0042238D /* ScoringViewController.swift */; };
 		A020607D1E4BAAFA0042238D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020607B1E4BAAFA0042238D /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A7E0ED71F38F4F0007D4C83 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		0A7E0ED91F39056E007D4C83 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		A02060741E4BAAFA0042238D /* gciosBags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gciosBags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02060771E4BAAFA0042238D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02060791E4BAAFA0042238D /* ScoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A7E0ED61F38F4CC007D4C83 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				0A7E0ED71F38F4F0007D4C83 /* WeatherApi.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		A020606B1E4BAAFA0042238D = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		A02060761E4BAAFA0042238D /* gciosBags */ = {
 			isa = PBXGroup;
 			children = (
+				0A7E0ED61F38F4CC007D4C83 /* Weather */,
 				A08441BB1E772D8F0024F32D /* Views */,
 				A022FF311E4F91E000670FEC /* ViewControllers */,
 				A02060991E4BB5C40042238D /* Models */,
@@ -116,6 +129,7 @@
 				A020609A1E4BB5D20042238D /* Game.swift */,
 				A020609C1E4BB5DC0042238D /* Round.swift */,
 				A020609E1E4BB5E70042238D /* Throw.swift */,
+				0A7E0ED91F39056E007D4C83 /* Weather.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -255,7 +269,9 @@
 				A020609F1E4BB5E70042238D /* Throw.swift in Sources */,
 				A020607A1E4BAAFA0042238D /* ScoringViewController.swift in Sources */,
 				A02060781E4BAAFA0042238D /* AppDelegate.swift in Sources */,
+				0A7E0EDA1F39056E007D4C83 /* Weather.swift in Sources */,
 				A02060981E4BB46C0042238D /* BagView.swift in Sources */,
+				0A7E0ED81F38F4F0007D4C83 /* WeatherApi.swift in Sources */,
 				A020609D1E4BB5DC0042238D /* Round.swift in Sources */,
 				A020609B1E4BB5D20042238D /* Game.swift in Sources */,
 			);
