@@ -8,3 +8,16 @@ There's two alternatives to decide the winning team:
  - At the end of a round, if a team has a total score of 21 points exactly, they're the winners. If the team goes over their total score is reverted back to 11.
 
 You can check the full rules of Cornhole in http://www.cornholehowto.com/how-to-play/.
+
+
+#SAVEGAME TASK
+
+
+Right now the app doesn't have any persistence mechanism, which means the app is closed or crashes all information would be lost. There's two pieces of information we want to save and restore: the state of the current game if there's one in progress so that it can be resumed, and user preferences.
+
+You can use whatever mechanism you think fits each of these needs better.
+
+ Save state of in progress games so that it can be restored after the user closes the app or if a crash occurs.
+
+ When a user changes the rules to pick who wins  this selection should be applied to future games as well.
+
