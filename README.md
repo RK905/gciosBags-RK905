@@ -11,6 +11,7 @@ You can check the full rules of Cornhole in http://www.cornholehowto.com/how-to-
 
 
 #Weather Task
+
 In order to make the experience more immersive we want the background image to change depending on actual weather conditions. To do that we'll query OpenWeatherMap's API at the beginning of each game and change the grass background depending on the response.
 
 There will be three possible backgrounds: sunBG, rainBG, and cloudyBG. These assets are already included in the app's asset catalog.
